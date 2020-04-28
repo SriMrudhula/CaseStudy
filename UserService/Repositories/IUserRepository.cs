@@ -7,9 +7,9 @@ namespace UserService.Repositories
 {
     public interface IUserRepository
     {
-        void AddUser(UserDetails user);
-        void UpdateUser(UserDetails user);
-        UserDetails Login(string uname, string pwd);
+        void AddUser(UserDetails userDetails);
+        void UpdateUser(UserDetails userDetails);
+        UserDetails Login(string username, string password);
         UserDetails ViewUser(int userId);
     }
 }

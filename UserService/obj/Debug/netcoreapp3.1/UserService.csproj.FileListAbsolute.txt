@@ -121,5 +121,10 @@ E:\CaseStudy-Products\ProductService\UserService\bin\Debug\netcoreapp3.1\ru\Micr
 E:\CaseStudy-Products\ProductService\UserService\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
 E:\CaseStudy-Products\ProductService\UserService\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
 E:\CaseStudy-Products\ProductService\UserService\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\CaseStudy-Products\ProductService\UserService\bin\Debug\netcoreapp3.1\Microsoft.OpenApi.dll
+E:\CaseStudy-Products\ProductService\UserService\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Swagger.dll
+E:\CaseStudy-Products\ProductService\UserService\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
+E:\CaseStudy-Products\ProductService\UserService\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
 E:\CaseStudy-Products\ProductService\UserService\obj\Debug\netcoreapp3.1\UserService.csproj.CoreCompileInputs.cache
+E:\CaseStudy-Products\ProductService\UserService\obj\Debug\netcoreapp3.1\UserService.MvcApplicationPartsAssemblyInfo.cs
 E:\CaseStudy-Products\ProductService\UserService\obj\Debug\netcoreapp3.1\UserService.MvcApplicationPartsAssemblyInfo.cache

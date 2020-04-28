@@ -11,6 +11,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using UserService.Repositories;
 using UserService.Models;
+using Microsoft.OpenApi.Models;
 namespace UserService
 {
     public class Startup
@@ -27,6 +28,10 @@ namespace UserService
         {
             services.AddTransient<IUserRepository, UserRepository>();
             services.AddDbContext<ProductDbContext>();
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "My API", Version = "v1" });
+            });
             services.AddControllers();
         }
 
@@ -39,7 +44,11 @@ namespace UserService
             }
 
             app.UseRouting();
-
+            app.UseSwagger();
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
+            });
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

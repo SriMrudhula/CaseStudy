@@ -12,18 +12,18 @@ namespace UserService.Controllers
     [ApiController]
     public class UserController : Controller
     {
-        public IUserRepository _repo;
-        public UserController(IUserRepository repo)
+        public IUserRepository iUserRepository;
+        public UserController(IUserRepository iUserRepository)
         {
-            _repo = repo;
+            this.iUserRepository = iUserRepository;
         }
         [HttpPost]
         [Route("AddUser")]
-        public IActionResult AddUser(UserDetails user)
+        public IActionResult AddUser(UserDetails userDetails)
         {
             try
             {
-                _repo.AddUser(user);
+                iUserRepository.AddUser(userDetails);
                 return Ok();
             }
             catch (Exception e)
@@ -37,11 +37,11 @@ namespace UserService.Controllers
         {
             try
             {
-                UserDetails user = _repo.Login(uname, pwd);
-                if (user == null)
+                UserDetails userDetails = iUserRepository.Login(uname, pwd);
+                if (userDetails == null)
                     return Ok("Invalid User");
                 else
-                    return Ok(user);
+                    return Ok(userDetails);
             }
             catch (Exception e)
             {
@@ -51,11 +51,11 @@ namespace UserService.Controllers
 
         [HttpPut]
         [Route("UpdateUser")]
-        public IActionResult UpdateUser(UserDetails user)
+        public IActionResult UpdateUser(UserDetails userDetails)
         {
             try
             {
-                _repo.UpdateUser(user);
+                iUserRepository.UpdateUser(userDetails);
                 return Ok();
             }
             catch (Exception e)
@@ -69,7 +69,7 @@ namespace UserService.Controllers
         {
             try
             {
-                return Ok(_repo.ViewUser(userId));
+                return Ok(iUserRepository.ViewUser(userId));
             }
             catch (Exception e)
             {

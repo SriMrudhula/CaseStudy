@@ -7,9 +7,9 @@ namespace ProductService.Repositories
 {
     public interface IProductRepository
     {
-        void AddProduct(Products prod);
+        void AddProduct(Products product);
         List<Products> GetProducts(int userId);
-        void UpdateProduct(Products prod);
-        void DeleteProduct(int prodId);
+        void UpdateProduct(Products product);
+        void DeleteProduct(int productId);
     }
 }

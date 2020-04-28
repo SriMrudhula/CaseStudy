@@ -8,33 +8,33 @@ namespace ProductService.Repositories
 {
     public class ProductRepository : IProductRepository
     {
-        public ProductDbContext _context;
-        public ProductRepository(ProductDbContext context)
+        public ProductDbContext productDbContext;
+        public ProductRepository(ProductDbContext productDbContext)
         {
-            _context = context;
+            this.productDbContext = productDbContext;
         }
-        public void AddProduct(Products prod)
+        public void AddProduct(Products product)
         {
-            _context.Products.Add(prod);
-            _context.SaveChanges();
+            productDbContext.Products.Add(product);
+            productDbContext.SaveChanges();
         }
 
         public void DeleteProduct(int prodId)
         {
-            Products prod=_context.Products.Find(prodId);
-            _context.Products.Remove(prod);
-            _context.SaveChanges();
+            Products product= productDbContext.Products.Find(prodId);
+            productDbContext.Products.Remove(product);
+            productDbContext.SaveChanges();
         }
 
         public List<Products> GetProducts(int userId)
         {
-            return _context.Products.Where(e => e.UserId == userId).ToList();
+            return productDbContext.Products.Where(e => e.UserId == userId).ToList();
         }
 
-        public void UpdateProduct(Products prod)
+        public void UpdateProduct(Products product)
         {
-            _context.Products.Update(prod);
-            _context.SaveChanges();
+            productDbContext.Products.Update(product);
+            productDbContext.SaveChanges();
         }
     }
 }

@@ -7,16 +7,17 @@ using Microsoft.AspNetCore.Mvc;
 using ProductService.Repositories;
 using ProductService.Models;
 
+
 namespace ProductService.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
     public class ProductController : Controller
     {
-        public IProductRepository _repo;
-        public ProductController(IProductRepository repo)
+        public IProductRepository iProductRepository;
+        public ProductController(IProductRepository iProductRepository)
         {
-            _repo = repo;
+            this.iProductRepository = iProductRepository;
         }
 
         [HttpGet]
@@ -25,7 +26,7 @@ namespace ProductService.Controllers
         {
             try
             {
-                return Ok(_repo.GetProducts(userId));
+                return Ok(iProductRepository.GetProducts(userId));
             }
             catch(Exception e)
             {
@@ -34,11 +35,11 @@ namespace ProductService.Controllers
         }
         [HttpPost]
         [Route("AddProduct")]
-        public IActionResult AddProduct(Products prod)
+        public IActionResult AddProduct(Products product)
         {
             try 
             {
-                _repo.AddProduct(prod);
+                iProductRepository.AddProduct(product);
                 return Ok();
             }
             catch(Exception e)
@@ -48,11 +49,11 @@ namespace ProductService.Controllers
         }
         [HttpPut]
         [Route("UpdateProduct")]
-        public IActionResult UpdateProduct(Products prod)
+        public IActionResult UpdateProduct(Products product)
         {
             try
             {
-                _repo.UpdateProduct(prod);
+                iProductRepository.UpdateProduct(product);
                 return Ok();
             }
             catch(Exception e)
@@ -62,11 +63,11 @@ namespace ProductService.Controllers
         }
     [HttpDelete]
     [Route("DeleteProduct/{prodId}")]
-        public IActionResult DeleteProduct(int prodId)
+        public IActionResult DeleteProduct(int productId)
         {
             try
             {
-                _repo.DeleteProduct(prodId);
+                iProductRepository.DeleteProduct(productId);
                 return Ok();
             }
             catch (Exception e)

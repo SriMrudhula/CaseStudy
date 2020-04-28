@@ -142,5 +142,3 @@ E:\CaseStudy-Products\ProductService\ProductService\bin\Debug\netcoreapp3.1\ru\M
 E:\CaseStudy-Products\ProductService\ProductService\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
 E:\CaseStudy-Products\ProductService\ProductService\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
 E:\CaseStudy-Products\ProductService\ProductService\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
-E:\CaseStudy-Products\ProductService\ProductService\obj\Debug\netcoreapp3.1\ProductService.csproj.CoreCompileInputs.cache
-E:\CaseStudy-Products\ProductService\ProductService\obj\Debug\netcoreapp3.1\ProductService.MvcApplicationPartsAssemblyInfo.cache

@@ -8,30 +8,30 @@ namespace UserService.Repositories
 {
     public class UserRepository : IUserRepository
     {
-        public ProductDbContext _context;
-        public UserRepository(ProductDbContext context)
+        public ProductDbContext productDbContext;
+        public UserRepository(ProductDbContext productDbContext)
         {
-            _context = context;
+            this.productDbContext = productDbContext;
         }
-        public void AddUser(UserDetails user)
+        public void AddUser(UserDetails userDetails)
         {
-            _context.UserDetails.Add(user);
-            _context.SaveChanges();
+            productDbContext.UserDetails.Add(userDetails);
+            productDbContext.SaveChanges();
         }
 
         public UserDetails ViewUser(int userId)
         {
-            return _context.UserDetails.Find(userId);
+            return productDbContext.UserDetails.Find(userId);
         }
 
-        public UserDetails Login(string uname, string pwd)
+        public UserDetails Login(string username, string password)
         {
-            return _context.UserDetails.SingleOrDefault(e => e.Username == uname && e.Pwd == pwd);
+            return productDbContext.UserDetails.SingleOrDefault(e => e.Username == username && e.Pwd == password);
         }
-        public void UpdateUser(UserDetails user)
+        public void UpdateUser(UserDetails userDetails)
         {
-            _context.UserDetails.Update(user);
-            _context.SaveChanges();
+            productDbContext.UserDetails.Update(userDetails);
+            productDbContext.SaveChanges();
         }
     }
 }
